@@ -1,8 +1,17 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import BlogFeed from '../components/BlogFeed';
+import { getCollection, type CollectionEntry } from 'astro:content';
+
+const posts = await getCollection('blog');
+const mappedPosts = posts.map((post: CollectionEntry<'blog'>) => ({
+  title: post.data.title,
+  excerpt: post.data.description,
+  tag: post.data.tag,
+  slug: post.slug
+}));
 ---
 
 <Layout>
-  <BlogFeed client:load />
+  <BlogFeed client:load posts={mappedPosts} />
 </Layout>
