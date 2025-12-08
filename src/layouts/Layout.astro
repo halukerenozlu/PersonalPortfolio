@@ -12,7 +12,7 @@ import { ClientRouter } from 'astro:transitions';
 		<ClientRouter />
 		{/* Theme persistence script to prevent FOUC */}
 		<script is:inline>
-			const theme = (() => {
+			const getTheme = () => {
 				if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
 					return localStorage.getItem('theme');
 				}
@@ -20,13 +20,22 @@ import { ClientRouter } from 'astro:transitions';
 					return 'dark';
 				}
 				return 'light';
-			})();
+			};
 
-			if (theme === 'dark') {
-				document.documentElement.classList.add('dark');
-			} else {
-				document.documentElement.classList.remove('dark');
-			}
+			const applyTheme = () => {
+				const theme = getTheme();
+				if (theme === 'dark') {
+					document.documentElement.classList.add('dark');
+				} else {
+					document.documentElement.classList.remove('dark');
+				}
+			};
+
+			// Apply on initial load
+			applyTheme();
+
+			// Apply on view transition updates
+			document.addEventListener('astro:after-swap', applyTheme);
 		</script>
 	</head>
 	<body class="bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-50 transition-colors duration-300">

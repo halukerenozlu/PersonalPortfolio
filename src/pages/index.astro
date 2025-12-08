@@ -1,6 +1,5 @@
 ---
 import Hero from '../components/Hero.tsx';
-import ThemeToggle from '../components/ThemeToggle.tsx';
 import Layout from '../layouts/Layout.astro';
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
@@ -8,11 +7,7 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout>
-	<header class="fixed top-0 right-0 p-6 z-50">
-		<ThemeToggle client:load />
-	</header>
-	
 	<main class="relative">
-		<Hero />
+		<Hero client:load />
 	</main>
 </Layout>
