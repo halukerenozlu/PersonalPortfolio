@@ -12,7 +12,7 @@ export default function Hero() {
       </h1>
       
       <p className="text-xl sm:text-2xl font-medium text-zinc-600 dark:text-zinc-300 mb-8">
-        Full Stack Developer | AI Engineer | Python Developer
+        AI Engineer | Product Engineer
       </p>
 
       <div className="max-w-2xl mx-auto space-y-8">
@@ -32,6 +32,14 @@ export default function Hero() {
             className="px-8 py-3 rounded-2xl bg-zinc-100 dark:bg-zinc-800 text-zinc-900 dark:text-zinc-100 border border-zinc-200 dark:border-zinc-700 font-semibold text-lg hover:scale-110 transition-transform duration-300 shadow-lg hover:shadow-xl"
           >
             Projects
+          </a>
+          <a
+            href="/cv.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-8 py-3 rounded-2xl bg-blue-700 hover:bg-blue-800 text-white font-semibold text-lg hover:scale-110 transition-all duration-300 shadow-lg hover:shadow-xl"
+          >
+            My CV
           </a>
         </div>
 

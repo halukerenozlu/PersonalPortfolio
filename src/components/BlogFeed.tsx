@@ -1,17 +1,7 @@
 import { useState, useMemo } from 'react';
 import TagSearch from './TagSearch';
 import BlogCard from './BlogCard';
-
-export interface BlogPost {
-  title: string;
-  excerpt: string;
-  tag: string;
-  slug: string; // Added for unique key if needed, though we might use frontmatter
-}
-
-interface BlogFeedProps {
-  posts: BlogPost[];
-}
+import type { BlogPost, BlogFeedProps } from '../types';
 
 export default function BlogFeed({ posts }: BlogFeedProps) {
   const [searchQuery, setSearchQuery] = useState("");

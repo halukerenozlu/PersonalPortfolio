@@ -1,13 +1,7 @@
 import { Search, ChevronDown } from 'lucide-react';
 import { useState, useRef, useEffect } from 'react';
+import type { TagSearchProps } from '../types';
 
-interface TagSearchProps {
-  tags: string[];
-  selectedTag: string;
-  searchQuery: string;
-  onSearchChange: (query: string) => void;
-  onTagSelect: (tag: string) => void;
-}
 
 export default function TagSearch({ tags, selectedTag, searchQuery, onSearchChange, onTagSelect }: TagSearchProps) {
   const [isOpen, setIsOpen] = useState(false);

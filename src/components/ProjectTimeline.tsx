@@ -14,19 +14,8 @@ import {
   SiD3Dotjs,
   SiMqtt 
 } from 'react-icons/si';
+import type { Project, YearGroup } from '../types';
 
-interface Project {
-  id: string;
-  title: string;
-  description: string;
-  githubUrl: string;
-  technologies: string[];
-}
-
-interface YearGroup {
-  year: string;
-  projects: Project[];
-}
 
 const timelineData: YearGroup[] = [
   {

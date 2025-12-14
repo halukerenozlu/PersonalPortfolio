@@ -1,10 +1,4 @@
-interface BlogCardProps {
-  title: string;
-  excerpt: string;
-  tag: string;
-  delay: number;
-}
-
+import type { BlogCardProps } from '../types';
 export default function BlogCard({ title, excerpt, tag, delay }: BlogCardProps) {
   return (
     <article 
